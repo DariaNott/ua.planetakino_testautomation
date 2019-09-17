@@ -35,7 +35,7 @@ public class DateHelper {
     public DateTime dateConverter(String date) {
         date = date.trim();
         int spaceIndex = date.indexOf(" ");
-        int comaIndex = date.indexOf(",")
+        int comaIndex = date.indexOf(",");
         String day = date.substring(0, spaceIndex);
         String month = date.substring(spaceIndex, comaIndex-1).trim();
         DateTime convertedDate = new DateTime(2019, monthConverter(month), Integer.parseInt(day), 12, 0, 0, 0);
