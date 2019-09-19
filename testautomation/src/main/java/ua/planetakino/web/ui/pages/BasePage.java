@@ -29,7 +29,7 @@ public abstract class BasePage {
 
     public  WebElement waitVisibility (WebElement element) {
         new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOf(element));
-        return  element;
+        return element;
     }
 
     public void click (WebElement element){

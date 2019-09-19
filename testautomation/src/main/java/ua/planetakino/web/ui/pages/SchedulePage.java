@@ -1,9 +1,16 @@
 package ua.planetakino.web.ui.pages;
 
+import org.joda.time.DateTime;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import ua.planetakino.entity.MovieItem;
+import ua.planetakino.helper.DateHelper;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class SchedulePage extends BasePage {
 
@@ -37,9 +44,103 @@ public class SchedulePage extends BasePage {
     @FindBy (xpath = "//mat-checkbox[contains(@id,'mat-checkbox-6')]")
     private WebElement filterFormat3D;
 
+    @FindBy(xpath = "//app-timetable-movie/div[contains(@class,'movie')]")
+    private List<WebElement> movieItemBlocks;
+
     public SchedulePage (WebDriver driver){
         super(driver);
         PageFactory.initElements(driver, this);
+    }
+
+    public List<MovieItem> getMovieItems() {
+        List<MovieItem> movieItems = new ArrayList<>();
+        for (WebElement item : movieItemBlocks) {
+            String name = getNameForMovieElement(item);
+            List<DateTime> dates = getDatesForMovieElement(item);
+            List <String> technologiesAndFormats = getTechnologyAndFormatForMovieElement(item);
+            MovieItem mItem = new MovieItem(name, dates, technologiesAndFormats);
+            movieItems.add(mItem);
+        }
+        return movieItems;
+    }
+
+    public SchedulePage selectFilterPeriodWeek () {
+        click(filterPeriodWeek);
+        return this;
+    }
+
+    public SchedulePage selectFilterPeriodToday () {
+        click(filterPeriodToday);
+        return this;
+    }
+
+    public SchedulePage selectFilterPeriodTomorrow () {
+        click(filterPeriodTomorrow);
+        return this;
+    }
+
+    public SchedulePage selectFilterPeriodMonth () {
+        click(filterPeriodMonth);
+        return this;
+    }
+
+    public SchedulePage selectFilterTechnology4DX () {
+        click(filterTechnology4DX);
+        return this;
+    }
+
+    public SchedulePage selectFilterTechnologyCinetech () {
+        click(filterTechnologyCinetech);
+        return this;
+    }
+
+    public SchedulePage selectFilterTechnologyIMAX () {
+        click(filterTechnologyIMAX);
+        return this;
+    }
+
+    public SchedulePage selectFilterTechnologyReLUX () {
+        click(filterTechnologyReLUX);
+        return this;
+    }
+
+    public SchedulePage selectFilterFormat2D () {
+        click(filterFormat2D);
+        return this;
+    }
+
+    public SchedulePage selectFilterFormat3D () {
+        click(filterFormat3D);
+        return this;
+    }
+
+    private List<DateTime> getDatesForMovieElement (WebElement movieItemBlock) {
+        DateHelper helper = new DateHelper();
+        List<DateTime> dates = new ArrayList<>();
+        List <WebElement> dateElements = movieItemBlock.findElements(By
+                .xpath(".//section//div[contains(@class,'showtime-date')]"));
+        for (WebElement element: dateElements){
+            DateTime date = helper.dateConverter(element.getText());
+            dates.add(date);
+        }
+        return dates;
+    }
+
+    private String getNameForMovieElement(WebElement movieItemBlock){
+        String name = movieItemBlock.findElement(By.xpath(".//section/a[contains(@class,'movie-name')]"))
+                .getText();
+        return name;
+    }
+
+    private List<String> getTechnologyAndFormatForMovieElement (WebElement movieItemBlock) {
+        List <String> technologiesAndFormats = new ArrayList<>();
+        List<WebElement> techAndFormElements = movieItemBlock.findElements(By
+                .xpath(".//span"));
+        for (WebElement element: techAndFormElements){
+            String techAndFormat = element.getText().trim();
+            technologiesAndFormats.add(techAndFormat);
+        }
+        return technologiesAndFormats;
     }
 
 }

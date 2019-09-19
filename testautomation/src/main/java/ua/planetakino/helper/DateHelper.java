@@ -8,8 +8,7 @@ import ua.planetakino.config.EnvConfig;
 public class DateHelper {
     private EnvConfig config;
 
-    public boolean isThisDateWithinRange(String dateToValidate, int dayRange) {
-        DateTime convertedDateToValidate = dateConverter(dateToValidate);
+    public boolean isThisDateWithinRange(DateTime dateToValidate, int dayRange) {
         DateTimeZone timeZone = DateTimeZone.forID("Europe/Kiev");
         DateTime now = DateTime.now(timeZone);
 
@@ -22,13 +21,8 @@ public class DateHelper {
         }
         DateTime endDate = startDate.plusDays(dayRange + 1).withTimeAtStartOfDay();
         Interval interval = new Interval(startDate, endDate);
-        System.out.println(interval);
 
-        if (interval.contains(convertedDateToValidate)) {
-            return true;
-        } else {
-            return false;
-        }
+        return interval.contains(dateToValidate);
     }
 
 
@@ -37,7 +31,7 @@ public class DateHelper {
         int spaceIndex = date.indexOf(" ");
         int comaIndex = date.indexOf(",");
         String day = date.substring(0, spaceIndex);
-        String month = date.substring(spaceIndex, comaIndex-1).trim();
+        String month = date.substring(spaceIndex, comaIndex).trim();
         DateTime convertedDate = new DateTime(2019, monthConverter(month), Integer.parseInt(day), 12, 0, 0, 0);
         return convertedDate;
     }
@@ -92,14 +86,6 @@ public class DateHelper {
             default:
                 return 0;
         }
-    }
-
-    public static void main(String args[]) {
-        DateHelper date = new DateHelper();
-        date.isThisDateWithinRange("18 вересня", 0);
-        date.isThisDateWithinRange("18 вересня", 1);
-        date.isThisDateWithinRange("18 вересня", 7);
-        date.isThisDateWithinRange("18 вересня", 30);
     }
 }
 
