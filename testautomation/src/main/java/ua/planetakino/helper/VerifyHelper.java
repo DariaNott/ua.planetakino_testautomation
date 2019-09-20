@@ -66,4 +66,11 @@ public class VerifyHelper {
         Assert.assertEquals(citiesAndTheaters, cities);
     }
 
+    public void verifyAuthorizedUser (String status) {
+        Assert.assertEquals(status, "authorised");
+    }
+
+    public void verifyAnonymousUser (String status) {
+        Assert.assertEquals(status, "anonoymus");
+    }
 }

@@ -7,16 +7,14 @@ public class AccountTests extends TestBase {
 
     @Test
     public void checkLogIn () {
-        mainPage.getHeader().goToLogIn().logIn();
-        //TODO assert
-//div[contains(@class,'authorised-user')]
+        String status =  mainPage.getHeader().goToLogIn().logIn().getAuthorizationStatus();
+        helper.verifyAuthorizedUser(status);
     }
 
     @Test
     public void chekLogOut () {
-        mainPage.getHeader().goToLogIn().logIn().getHeader().logOut();
-        //TODO assert
-//div[contains(@class,'anonymous-user')]
+        String status = mainPage.getHeader().goToLogIn().logIn().getHeader().logOut().getAuthorizationStatus();
+        helper.verifyAnonymousUser(status);
     }
 
     @Test
