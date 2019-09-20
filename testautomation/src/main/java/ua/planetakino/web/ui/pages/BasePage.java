@@ -10,7 +10,6 @@ import ua.planetakino.config.EnvConfig;
 public abstract class BasePage {
     protected Header header;
     protected WebDriver driver;
-    protected WebDriver wait;
     protected EnvConfig config;
 
     public BasePage (WebDriver driver) {

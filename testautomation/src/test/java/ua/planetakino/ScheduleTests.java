@@ -90,5 +90,4 @@ public class ScheduleTests extends TestBase {
                 .selectFilterFormat3D().getMovieItems();
         helper.verifyTechnologyAnfFormatFilter(movieItems, "RE'LUX, 3D");
     }
-    
 }

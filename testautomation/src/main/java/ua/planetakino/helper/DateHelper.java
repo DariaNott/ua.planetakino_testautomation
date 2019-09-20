@@ -36,6 +36,7 @@ public class DateHelper {
         return convertedDate;
     }
 
+    //TODO use or delete
     private String weekDayConverter(String weekDay) {
         switch (weekDay) {
             case "Monday":

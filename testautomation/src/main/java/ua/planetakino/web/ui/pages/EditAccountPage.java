@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import ua.planetakino.entity.Account;
 
 public class EditAccountPage extends BasePage {
 
@@ -44,5 +45,13 @@ public class EditAccountPage extends BasePage {
     public AccountPage confirmChanges () {
         click(saveChangesButton);
         return new AccountPage(driver);
+    }
+
+    public Account getAccountInfo () {
+        String firstName = inputFirstName.getAttribute("value");
+        String lastName = inputLastName.getAttribute("value");
+        String secretWord = inputSecretWord.getAttribute("value");
+        Account account = new Account(firstName, lastName, secretWord);
+        return account;
     }
 }
