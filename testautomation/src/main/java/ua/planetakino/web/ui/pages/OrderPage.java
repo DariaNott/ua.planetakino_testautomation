@@ -18,4 +18,8 @@ public class OrderPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
+    public OrderPage buyAsGuest () {
+
+    }
+
 }

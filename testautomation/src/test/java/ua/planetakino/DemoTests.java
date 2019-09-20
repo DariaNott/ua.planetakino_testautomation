@@ -5,13 +5,13 @@ import ua.planetakino.entity.MovieItem;
 
 import java.util.List;
 
-public class DemoTests extends TestBase{
+public class DemoTests extends TestBase {
 
     @Test
     public void checkclasses() {
-        List<MovieItem> movieItems = mainPage.openWebsite().getHeader().goToSchedulePage().selectFilterPeriodWeek()
-                .getMovieItems();
-        helper.verifyDateRange(movieItems, 5);
+        mainPage.openWebsite().getHeader().goToSchedulePage().selectFilterPeriodMonth()
+                .orderMovieTicket(1, 3);
+
     }
 
 

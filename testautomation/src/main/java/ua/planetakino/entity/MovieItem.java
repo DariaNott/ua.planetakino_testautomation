@@ -1,6 +1,7 @@
 package ua.planetakino.entity;
 
 import org.joda.time.DateTime;
+import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -11,8 +12,9 @@ public class MovieItem {
     private String name;
     private List<DateTime> dates;
     private List<String> technologyAndFormat;
+    private List<WebElement> movieTime;
 
-    public MovieItem (String name, List<DateTime> dates, List<String> technologyAndFormat) {
+    public MovieItem (String name, List<DateTime> dates, List<String> technologyAndFormat, List<WebElement> availableMovieTime) {
         this.name = name;
         if (dates == null){
             this.dates = new ArrayList<>();
@@ -23,6 +25,9 @@ public class MovieItem {
             this.technologyAndFormat = new ArrayList<>();
         } else {
             this.technologyAndFormat = technologyAndFormat;
+        }
+        if (availableMovieTime == null){
+            this.movieTime = availableMovieTime;
         }
     }
 
@@ -37,6 +42,10 @@ public class MovieItem {
 
     public List<String> getMovieTechnologyAndFormat () {
         return technologyAndFormat;
+    }
+
+    public  List<WebElement> getMovieTime(){
+        return movieTime;
     }
 
     @Override
