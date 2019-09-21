@@ -2,6 +2,7 @@ package ua.planetakino;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import ua.planetakino.config.EnvConfig;
@@ -24,10 +25,11 @@ public abstract class TestBase {
     @BeforeMethod
     public void setChrome() {
         helper = new VerifyHelper();
-        driver = WebDriverFactory.getDriver(System.getProperty("browser", "chrome"));
-        driver.manage().timeouts().pageLoadTimeout(EnvConfig.getEnvironment().getTimeoutPageLoad(), TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(EnvConfig.getEnvironment().getImplicitlyWait(), TimeUnit.SECONDS);
+        String path = System.getProperty("user.dir");
+        System.setProperty("webdriver.chrome.driver", path + "\\src\\main\\resources\\chromedriver.exe");
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
         mainPage = new MainPage(driver);
         mainPage = mainPage.openWebsite();
         LOGGER.info("Opened page with url " + EnvConfig.getEnvironment().getWebUrl());

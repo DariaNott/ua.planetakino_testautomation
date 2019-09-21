@@ -166,3 +166,4 @@
 2019-09-21 23:30:32 INFO  BasePage:174 - Clicked on filterFormat3D.
 2019-09-21 23:31:02 INFO  BasePage:42 - Checking technology and format filters.
 2019-09-21 23:31:03 INFO  TestBase:42 - Driver closed.
+2019-09-22 00:19:58 INFO  TestBase:35 - Opened page with url https://planetakino.ua/

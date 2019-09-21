@@ -3,6 +3,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class WebDriverFactory {
 
@@ -16,7 +17,9 @@ public class WebDriverFactory {
                 throw new UnsupportedOperationException("Edge driver is not supported, yet!");
             default:
                 WebDriverManager.chromedriver().setup();
-                return new ChromeDriver();
+                ChromeOptions opts = new ChromeOptions();
+                opts.addArguments("--disable-browser-side-navigation");
+                return new ChromeDriver(opts);
         }
     }
 }
