@@ -28,12 +28,7 @@ public abstract class BasePage {
     }
 
     public WebElement waitClickability(WebElement element) {
-        new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(element));
-        return element;
-    }
-
-    public WebElement waitVisibility(WebElement element) {
-        new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOf(element));
+        new WebDriverWait(driver, 40).until(ExpectedConditions.elementToBeClickable(element));
         return element;
     }
 

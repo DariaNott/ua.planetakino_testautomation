@@ -15,16 +15,16 @@ public class Header {
     private WebDriver driver;
     protected static final Logger LOGGER = Logger.getLogger(BasePage.class);
 
-    @FindBy(linkText = "Розклад")
+    @FindBy(xpath = "//li/a[contains(@href,'showtimes')]")
     private WebElement scheduleButton;
 
-    @FindBy(linkText = "Фільми")
+    @FindBy(xpath = "//li/a[contains(@href,'movies')]")
     private WebElement moviesButton;
 
     @FindBy(xpath = "//div[contains(@class,'city-selector')]")
     private WebElement cityButton;
 
-    @FindBy(linkText = "Вхід")
+    @FindBy(xpath = "//a[contains(@href,'enter')]")
     private WebElement logInButton;
 
     @FindBy(xpath = "//a[contains(@class,'logout')]")

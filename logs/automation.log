@@ -8,3 +8,161 @@
 2019-09-21 22:33:36 INFO  BasePage:84 - Receive authorization status.
 2019-09-21 22:33:36 INFO  BasePage:88 - Checking that user is authorized.
 2019-09-21 22:33:37 INFO  TestBase:42 - Driver closed.
+2019-09-21 23:18:03 INFO  TestBase:33 - Opened page with url https://planetakino.ua/
+2019-09-21 23:18:10 INFO  BasePage:45 - Clicked on scheduleButton.
+2019-09-21 23:18:11 INFO  BasePage:118 - Scrolled to filterPeriodMonth.
+2019-09-21 23:18:13 INFO  BasePage:120 - Clicked on filterPeriodMonth.
+2019-09-21 23:18:26 INFO  BasePage:23 - Checking range for date filters.
+2019-09-21 23:18:28 INFO  TestBase:42 - Driver closed.
+2019-09-21 23:18:42 INFO  TestBase:33 - Opened page with url https://planetakino.ua/
+2019-09-21 23:18:48 INFO  BasePage:45 - Clicked on scheduleButton.
+2019-09-21 23:18:48 INFO  BasePage:100 - Scrolled to filterPeriodToday.
+2019-09-21 23:18:49 INFO  BasePage:102 - Clicked on filterPeriodToday.
+2019-09-21 23:18:53 INFO  BasePage:23 - Checking range for date filters.
+2019-09-21 23:18:54 INFO  TestBase:42 - Driver closed.
+2019-09-21 23:19:11 INFO  TestBase:33 - Opened page with url https://planetakino.ua/
+2019-09-21 23:19:11 INFO  BasePage:45 - Clicked on scheduleButton.
+2019-09-21 23:19:15 INFO  BasePage:109 - Scrolled to filterPeriodTomorrow.
+2019-09-21 23:19:16 INFO  BasePage:111 - Clicked on filterPeriodTomorrow.
+2019-09-21 23:19:20 INFO  BasePage:23 - Checking range for date filters.
+2019-09-21 23:19:21 INFO  TestBase:42 - Driver closed.
+2019-09-21 23:19:34 INFO  TestBase:33 - Opened page with url https://planetakino.ua/
+2019-09-21 23:19:40 INFO  BasePage:45 - Clicked on scheduleButton.
+2019-09-21 23:19:41 INFO  BasePage:91 - Scrolled to filterPeriodWeek.
+2019-09-21 23:19:42 INFO  BasePage:93 - Clicked on filterPeriodWeek.
+2019-09-21 23:19:52 INFO  BasePage:23 - Checking range for date filters.
+2019-09-21 23:19:53 INFO  TestBase:42 - Driver closed.
+2019-09-21 23:20:07 INFO  TestBase:33 - Opened page with url https://planetakino.ua/
+2019-09-21 23:20:15 INFO  BasePage:45 - Clicked on scheduleButton.
+2019-09-21 23:20:15 INFO  BasePage:127 - Scrolled to filterTechnology4DX.
+2019-09-21 23:20:17 INFO  BasePage:129 - Clicked on filterTechnology4DX.
+2019-09-21 23:20:17 INFO  BasePage:163 - Scrolled to filterFormat2D.
+2019-09-21 23:20:18 INFO  BasePage:165 - Clicked on filterFormat2D.
+2019-09-21 23:20:18 INFO  BasePage:42 - Checking technology and format filters.
+2019-09-21 23:20:19 INFO  TestBase:42 - Driver closed.
+2019-09-21 23:20:33 INFO  TestBase:33 - Opened page with url https://planetakino.ua/
+2019-09-21 23:20:49 INFO  BasePage:45 - Clicked on scheduleButton.
+2019-09-21 23:20:50 INFO  BasePage:127 - Scrolled to filterTechnology4DX.
+2019-09-21 23:20:55 INFO  BasePage:129 - Clicked on filterTechnology4DX.
+2019-09-21 23:20:55 INFO  BasePage:172 - Scrolled to bottom.
+2019-09-21 23:21:01 INFO  BasePage:174 - Clicked on filterFormat3D.
+2019-09-21 23:21:01 INFO  BasePage:42 - Checking technology and format filters.
+2019-09-21 23:21:02 INFO  TestBase:42 - Driver closed.
+2019-09-21 23:21:19 INFO  TestBase:33 - Opened page with url https://planetakino.ua/
+2019-09-21 23:21:26 INFO  BasePage:45 - Clicked on scheduleButton.
+2019-09-21 23:21:26 INFO  BasePage:136 - Scrolled to filterTechnologyCinetech.
+2019-09-21 23:21:27 INFO  BasePage:138 - Clicked on filterTechnologyCinetech.
+2019-09-21 23:21:28 INFO  BasePage:163 - Scrolled to filterFormat2D.
+2019-09-21 23:21:29 INFO  BasePage:165 - Clicked on filterFormat2D.
+2019-09-21 23:21:31 INFO  BasePage:42 - Checking technology and format filters.
+2019-09-21 23:21:32 INFO  TestBase:42 - Driver closed.
+2019-09-21 23:21:51 INFO  TestBase:33 - Opened page with url https://planetakino.ua/
+2019-09-21 23:21:58 INFO  BasePage:45 - Clicked on scheduleButton.
+2019-09-21 23:21:58 INFO  BasePage:136 - Scrolled to filterTechnologyCinetech.
+2019-09-21 23:21:59 INFO  BasePage:138 - Clicked on filterTechnologyCinetech.
+2019-09-21 23:21:59 INFO  BasePage:172 - Scrolled to bottom.
+2019-09-21 23:22:00 INFO  BasePage:174 - Clicked on filterFormat3D.
+2019-09-21 23:22:01 INFO  BasePage:42 - Checking technology and format filters.
+2019-09-21 23:22:02 INFO  TestBase:42 - Driver closed.
+2019-09-21 23:22:20 INFO  TestBase:33 - Opened page with url https://planetakino.ua/
+2019-09-21 23:22:25 INFO  BasePage:45 - Clicked on scheduleButton.
+2019-09-21 23:22:25 INFO  BasePage:145 - Scrolled to filterTechnologyIMAX.
+2019-09-21 23:22:26 INFO  BasePage:147 - Clicked on filterTechnologyIMAX.
+2019-09-21 23:22:27 INFO  BasePage:163 - Scrolled to filterFormat2D.
+2019-09-21 23:22:28 INFO  BasePage:165 - Clicked on filterFormat2D.
+2019-09-21 23:22:28 INFO  BasePage:42 - Checking technology and format filters.
+2019-09-21 23:22:29 INFO  TestBase:42 - Driver closed.
+2019-09-21 23:22:45 INFO  TestBase:33 - Opened page with url https://planetakino.ua/
+2019-09-21 23:22:57 INFO  BasePage:45 - Clicked on scheduleButton.
+2019-09-21 23:22:57 INFO  BasePage:145 - Scrolled to filterTechnologyIMAX.
+2019-09-21 23:22:58 INFO  BasePage:147 - Clicked on filterTechnologyIMAX.
+2019-09-21 23:22:58 INFO  BasePage:172 - Scrolled to bottom.
+2019-09-21 23:22:59 INFO  BasePage:174 - Clicked on filterFormat3D.
+2019-09-21 23:24:32 INFO  TestBase:33 - Opened page with url https://planetakino.ua/
+2019-09-21 23:24:40 INFO  BasePage:45 - Clicked on scheduleButton.
+2019-09-21 23:24:41 INFO  BasePage:118 - Scrolled to filterPeriodMonth.
+2019-09-21 23:24:44 INFO  BasePage:120 - Clicked on filterPeriodMonth.
+2019-09-21 23:24:58 INFO  BasePage:23 - Checking range for date filters.
+2019-09-21 23:24:59 INFO  TestBase:42 - Driver closed.
+2019-09-21 23:25:17 INFO  TestBase:33 - Opened page with url https://planetakino.ua/
+2019-09-21 23:25:22 INFO  BasePage:45 - Clicked on scheduleButton.
+2019-09-21 23:25:22 INFO  BasePage:100 - Scrolled to filterPeriodToday.
+2019-09-21 23:25:23 INFO  BasePage:102 - Clicked on filterPeriodToday.
+2019-09-21 23:25:27 INFO  BasePage:23 - Checking range for date filters.
+2019-09-21 23:25:28 INFO  TestBase:42 - Driver closed.
+2019-09-21 23:25:45 INFO  TestBase:33 - Opened page with url https://planetakino.ua/
+2019-09-21 23:25:57 INFO  BasePage:45 - Clicked on scheduleButton.
+2019-09-21 23:25:57 INFO  BasePage:109 - Scrolled to filterPeriodTomorrow.
+2019-09-21 23:26:03 INFO  BasePage:111 - Clicked on filterPeriodTomorrow.
+2019-09-21 23:26:07 INFO  BasePage:23 - Checking range for date filters.
+2019-09-21 23:26:07 INFO  TestBase:42 - Driver closed.
+2019-09-21 23:26:22 INFO  TestBase:33 - Opened page with url https://planetakino.ua/
+2019-09-21 23:26:27 INFO  BasePage:45 - Clicked on scheduleButton.
+2019-09-21 23:26:28 INFO  BasePage:91 - Scrolled to filterPeriodWeek.
+2019-09-21 23:26:29 INFO  BasePage:93 - Clicked on filterPeriodWeek.
+2019-09-21 23:26:40 INFO  BasePage:23 - Checking range for date filters.
+2019-09-21 23:26:41 INFO  TestBase:42 - Driver closed.
+2019-09-21 23:26:55 INFO  TestBase:33 - Opened page with url https://planetakino.ua/
+2019-09-21 23:27:02 INFO  BasePage:45 - Clicked on scheduleButton.
+2019-09-21 23:27:02 INFO  BasePage:127 - Scrolled to filterTechnology4DX.
+2019-09-21 23:27:03 INFO  BasePage:129 - Clicked on filterTechnology4DX.
+2019-09-21 23:27:03 INFO  BasePage:163 - Scrolled to filterFormat2D.
+2019-09-21 23:27:03 INFO  BasePage:165 - Clicked on filterFormat2D.
+2019-09-21 23:27:04 INFO  BasePage:42 - Checking technology and format filters.
+2019-09-21 23:27:05 INFO  TestBase:42 - Driver closed.
+2019-09-21 23:27:16 INFO  TestBase:33 - Opened page with url https://planetakino.ua/
+2019-09-21 23:27:22 INFO  BasePage:45 - Clicked on scheduleButton.
+2019-09-21 23:27:23 INFO  BasePage:127 - Scrolled to filterTechnology4DX.
+2019-09-21 23:27:24 INFO  BasePage:129 - Clicked on filterTechnology4DX.
+2019-09-21 23:27:24 INFO  BasePage:172 - Scrolled to bottom.
+2019-09-21 23:27:25 INFO  BasePage:174 - Clicked on filterFormat3D.
+2019-09-21 23:27:25 INFO  BasePage:42 - Checking technology and format filters.
+2019-09-21 23:27:26 INFO  TestBase:42 - Driver closed.
+2019-09-21 23:27:42 INFO  TestBase:33 - Opened page with url https://planetakino.ua/
+2019-09-21 23:27:47 INFO  BasePage:45 - Clicked on scheduleButton.
+2019-09-21 23:27:47 INFO  BasePage:136 - Scrolled to filterTechnologyCinetech.
+2019-09-21 23:27:48 INFO  BasePage:138 - Clicked on filterTechnologyCinetech.
+2019-09-21 23:27:49 INFO  BasePage:163 - Scrolled to filterFormat2D.
+2019-09-21 23:27:49 INFO  BasePage:165 - Clicked on filterFormat2D.
+2019-09-21 23:27:52 INFO  BasePage:42 - Checking technology and format filters.
+2019-09-21 23:27:52 INFO  TestBase:42 - Driver closed.
+2019-09-21 23:28:10 INFO  TestBase:33 - Opened page with url https://planetakino.ua/
+2019-09-21 23:28:16 INFO  BasePage:45 - Clicked on scheduleButton.
+2019-09-21 23:28:16 INFO  BasePage:136 - Scrolled to filterTechnologyCinetech.
+2019-09-21 23:28:17 INFO  BasePage:138 - Clicked on filterTechnologyCinetech.
+2019-09-21 23:28:18 INFO  BasePage:172 - Scrolled to bottom.
+2019-09-21 23:28:18 INFO  BasePage:174 - Clicked on filterFormat3D.
+2019-09-21 23:28:19 INFO  BasePage:42 - Checking technology and format filters.
+2019-09-21 23:28:20 INFO  TestBase:42 - Driver closed.
+2019-09-21 23:28:36 INFO  TestBase:33 - Opened page with url https://planetakino.ua/
+2019-09-21 23:28:37 INFO  BasePage:45 - Clicked on scheduleButton.
+2019-09-21 23:28:43 INFO  BasePage:145 - Scrolled to filterTechnologyIMAX.
+2019-09-21 23:28:45 INFO  BasePage:147 - Clicked on filterTechnologyIMAX.
+2019-09-21 23:28:45 INFO  BasePage:163 - Scrolled to filterFormat2D.
+2019-09-21 23:28:45 INFO  BasePage:165 - Clicked on filterFormat2D.
+2019-09-21 23:28:45 INFO  BasePage:42 - Checking technology and format filters.
+2019-09-21 23:28:46 INFO  TestBase:42 - Driver closed.
+2019-09-21 23:28:59 INFO  TestBase:33 - Opened page with url https://planetakino.ua/
+2019-09-21 23:29:08 INFO  BasePage:45 - Clicked on scheduleButton.
+2019-09-21 23:29:08 INFO  BasePage:145 - Scrolled to filterTechnologyIMAX.
+2019-09-21 23:29:09 INFO  BasePage:147 - Clicked on filterTechnologyIMAX.
+2019-09-21 23:29:09 INFO  BasePage:172 - Scrolled to bottom.
+2019-09-21 23:29:09 INFO  BasePage:174 - Clicked on filterFormat3D.
+2019-09-21 23:29:40 INFO  BasePage:42 - Checking technology and format filters.
+2019-09-21 23:29:41 INFO  TestBase:42 - Driver closed.
+2019-09-21 23:29:56 INFO  TestBase:33 - Opened page with url https://planetakino.ua/
+2019-09-21 23:30:04 INFO  BasePage:45 - Clicked on scheduleButton.
+2019-09-21 23:30:06 INFO  BasePage:154 - Scrolled to filterTechnologyReLUX.
+2019-09-21 23:30:06 INFO  BasePage:156 - Clicked on filterTechnologyReLUX.
+2019-09-21 23:30:06 INFO  BasePage:163 - Scrolled to filterFormat2D.
+2019-09-21 23:30:07 INFO  BasePage:165 - Clicked on filterFormat2D.
+2019-09-21 23:30:07 INFO  BasePage:42 - Checking technology and format filters.
+2019-09-21 23:30:08 INFO  TestBase:42 - Driver closed.
+2019-09-21 23:30:21 INFO  TestBase:33 - Opened page with url https://planetakino.ua/
+2019-09-21 23:30:22 INFO  BasePage:45 - Clicked on scheduleButton.
+2019-09-21 23:30:31 INFO  BasePage:154 - Scrolled to filterTechnologyReLUX.
+2019-09-21 23:30:31 INFO  BasePage:156 - Clicked on filterTechnologyReLUX.
+2019-09-21 23:30:31 INFO  BasePage:172 - Scrolled to bottom.
+2019-09-21 23:30:32 INFO  BasePage:174 - Clicked on filterFormat3D.
+2019-09-21 23:31:02 INFO  BasePage:42 - Checking technology and format filters.
+2019-09-21 23:31:03 INFO  TestBase:42 - Driver closed.

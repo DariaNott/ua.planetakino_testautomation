@@ -188,15 +188,13 @@ public class SchedulePage extends BasePage {
     }
 
     private String getNameForMovieElement(WebElement movieItemBlock) {
-        String name = movieItemBlock.findElement(By.xpath(".//section/a[contains(@class,'movie-name')]"))
-                .getText();
+        String name = movieItemBlock.findElement(By.xpath(".//section/a[contains(@class,'movie-name')]")).getText();
         return name;
     }
 
     private List<String> getTechnologyAndFormatForMovieElement(WebElement movieItemBlock) {
         List<String> technologiesAndFormats = new ArrayList<>();
-        List<WebElement> techAndFormElements = movieItemBlock.findElements(By
-                .xpath(".//span"));
+        List<WebElement> techAndFormElements = movieItemBlock.findElements(By.xpath(".//span"));
         for (WebElement element : techAndFormElements) {
             String techAndFormat = element.getText().trim();
             technologiesAndFormats.add(techAndFormat);
