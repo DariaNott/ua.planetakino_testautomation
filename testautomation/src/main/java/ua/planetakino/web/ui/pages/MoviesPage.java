@@ -1,5 +1,6 @@
 package ua.planetakino.web.ui.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -23,12 +24,14 @@ public class MoviesPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
+    @Step("Clicking on the first movie in the window")
     public MoviesPage openFirstMovieDetails() {
         click(moviePoster);
         LOGGER.info("Clicked on moviePoster.");
         return this;
     }
 
+    @Step("Clicking on 'Our 3D Glasses' button")
     public MoviesPage openAboutGlassInfo () {
         click(aboutGlassesButton);
         LOGGER.info("Clicked on aboutGlassesButton.");

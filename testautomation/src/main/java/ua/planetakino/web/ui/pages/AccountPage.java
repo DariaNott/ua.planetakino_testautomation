@@ -1,5 +1,6 @@
 package ua.planetakino.web.ui.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
@@ -50,13 +51,14 @@ public class AccountPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
+    @Step("Clicking on 'Change email' button")
     public EditAccountPage gotoEditAccountPage() {
         click(changeEmail);
         LOGGER.info("Clicked on changeEmail");
         reenterPasswordIfRequired();
         return new EditAccountPage(driver);
     }
-
+    @Step("Logging in")
     public AccountPage logIn() {
         click(getLoginField);
         LOGGER.info("Clicked on getLoginField");

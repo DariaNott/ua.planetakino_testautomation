@@ -1,5 +1,6 @@
 package ua.planetakino.web.ui.pages;
 
+import io.qameta.allure.Step;
 import org.joda.time.DateTime;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -74,6 +75,7 @@ public class SchedulePage extends BasePage {
         return null;
     }
 
+    @Step("Clicking on the movie time to add ticket to the cart.")
     public OrderPage orderMovieTicket(String movieName, String movieTime) {
         WebElement movieBlock = getMovieBlock(movieName);
         WebElement movieTimeElement = getAvailableMovieTime(movieBlock, movieTime);
@@ -83,7 +85,7 @@ public class SchedulePage extends BasePage {
         LOGGER.info("Clicked on movieTimeElement.");
         return new OrderPage(driver);
     }
-
+    @Step("Clicking on 'Week' radio button.")
     public SchedulePage selectFilterPeriodWeek() {
         scrollInView(filterPeriodWeek);
         LOGGER.info("Scrolled to filterPeriodWeek.");
@@ -92,6 +94,7 @@ public class SchedulePage extends BasePage {
         return this;
     }
 
+    @Step("Clicking on 'Today' radio button.")
     public SchedulePage selectFilterPeriodToday() {
         scrollInView(filterPeriodToday);
         LOGGER.info("Scrolled to filterPeriodToday.");
@@ -100,6 +103,7 @@ public class SchedulePage extends BasePage {
         return this;
     }
 
+    @Step("Clicking on 'Tomorrow' radio button.")
     public SchedulePage selectFilterPeriodTomorrow() {
         scrollInView(filterPeriodTomorrow);
         LOGGER.info("Scrolled to filterPeriodTomorrow.");
@@ -108,6 +112,7 @@ public class SchedulePage extends BasePage {
         return this;
     }
 
+    @Step("Clicking on 'Month' radio button.")
     public SchedulePage selectFilterPeriodMonth() {
         scrollInView(filterPeriodMonth);
         LOGGER.info("Scrolled to filterPeriodMonth.");
@@ -116,6 +121,7 @@ public class SchedulePage extends BasePage {
         return this;
     }
 
+    @Step("Clicking on '4DX' checkbox.")
     public SchedulePage selectFilterTechnology4DX() {
         scrollInView(filterTechnology4DX);
         LOGGER.info("Scrolled to filterTechnology4DX.");
@@ -124,6 +130,7 @@ public class SchedulePage extends BasePage {
         return this;
     }
 
+    @Step("Clicking on 'Cinetech+' checkbox.")
     public SchedulePage selectFilterTechnologyCinetech() {
         scrollInView(filterTechnologyCinetech);
         LOGGER.info("Scrolled to filterTechnologyCinetech.");
@@ -132,6 +139,7 @@ public class SchedulePage extends BasePage {
         return this;
     }
 
+    @Step("Clicking on 'IMAX' checkbox.")
     public SchedulePage selectFilterTechnologyIMAX() {
         scrollInView(filterTechnologyIMAX);
         LOGGER.info("Scrolled to filterTechnologyIMAX.");
@@ -140,6 +148,7 @@ public class SchedulePage extends BasePage {
         return this;
     }
 
+    @Step("Clicking on 'RE'LUX' checkbox.")
     public SchedulePage selectFilterTechnologyReLUX() {
         scrollInView(filterTechnologyReLUX);
         LOGGER.info("Scrolled to filterTechnologyReLUX.");
@@ -148,6 +157,7 @@ public class SchedulePage extends BasePage {
         return this;
     }
 
+    @Step("Clicking on '2D' checkbox.")
     public SchedulePage selectFilterFormat2D() {
         scrollInView(filterFormat2D);
         LOGGER.info("Scrolled to filterFormat2D.");
@@ -156,6 +166,7 @@ public class SchedulePage extends BasePage {
         return this;
     }
 
+    @Step("Clicking on '3D' checkbox.")
     public SchedulePage selectFilterFormat3D() {
         scrollPageToBottom();
         LOGGER.info("Scrolled to bottom.");

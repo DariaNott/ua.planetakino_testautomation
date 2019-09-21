@@ -1,5 +1,6 @@
 package ua.planetakino.web.ui.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -25,6 +26,7 @@ public class EditAccountPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
+    @Step("Changing the full name of the user.")
     public EditAccountPage changeName (String firstName, String lastName) {
         click(inputFirstName);
         LOGGER.info("Clicked on inputFirstName.");
@@ -41,6 +43,7 @@ public class EditAccountPage extends BasePage {
         return this;
     }
 
+    @Step("Changing secret word")
     public EditAccountPage changeSecretWord (String secretWord){
         click(inputSecretWord);
         LOGGER.info("Clicked on inputSecretWord.");
@@ -51,6 +54,7 @@ public class EditAccountPage extends BasePage {
         return this;
     }
 
+    @Step("Confirming changes by clicking on button 'Save'")
     public AccountPage confirmChanges () {
         click(saveChangesButton);
         LOGGER.info("Clicked on saveChangesButton.");

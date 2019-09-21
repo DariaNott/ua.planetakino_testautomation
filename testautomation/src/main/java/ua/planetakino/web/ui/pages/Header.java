@@ -1,5 +1,6 @@
 package ua.planetakino.web.ui.pages;
 
+import io.qameta.allure.Step;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -38,24 +39,28 @@ public class Header {
         PageFactory.initElements(driver, this);
     }
 
+    @Step("Clicking on 'Schedule' button in header")
     public SchedulePage goToSchedulePage() {
         scheduleButton.click();
         LOGGER.info("Clicked on scheduleButton.");
         return new SchedulePage(driver);
     }
 
+    @Step("Clicking on 'Movies' button in header")
     public MoviesPage goToMoviesPage() {
         moviesButton.click();
         LOGGER.info("Clicked on moviesButton.");
         return new MoviesPage(driver);
     }
 
+    @Step("Clicking on 'Log in' button in header")
     public AccountPage goToLogIn() {
         logInButton.click();
         LOGGER.info("Clicked on logInButton.");
         return new AccountPage(driver);
     }
 
+    @Step("Clicking on 'Log out' icon in header")
     public AccountPage logOut() {
         logOutButton.click();
         LOGGER.info("Clicked on logOutButton.");
@@ -70,6 +75,7 @@ public class Header {
         return citiesAndTheatersNames;
     }
 
+    @Step("Clicking on cities button in header")
     public Header openCitiesList() {
         cityButton.click();
         LOGGER.info("Clicked on cityButton.");
