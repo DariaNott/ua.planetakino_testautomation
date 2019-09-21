@@ -1,10 +1,9 @@
 package ua.planetakino.web.ui.pages;
 
-import org.openqa.selenium.By;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.ArrayList;
@@ -13,6 +12,7 @@ import java.util.List;
 public class Header {
 
     private WebDriver driver;
+    protected static final Logger LOGGER = Logger.getLogger(BasePage.class);
 
     @FindBy(linkText = "Розклад")
     private WebElement scheduleButton;
@@ -26,64 +26,53 @@ public class Header {
     @FindBy(linkText = "Вхід")
     private WebElement logInButton;
 
-    @FindBy (xpath = "//a[contains(@class,'logout')]")
+    @FindBy(xpath = "//a[contains(@class,'logout')]")
     private WebElement logOutButton;
 
-    @FindBy(xpath = "//div[contains(@class,'cart__icon')]")
-    private WebElement cartIcon;
-
-    @FindBy (xpath = "//ul[@id='citylist']/li//a")
+    @FindBy(xpath = "//ul[@id='citylist']/li//a")
     private List<WebElement> cityList;
 
-    @FindBy(xpath = "//div[contains(@class,'cart__countdown')]")
-    private WebElement cartCountdown;
 
-    @FindBy(xpath = "//div[contains(@class,'cart__items')]")
-    private WebElement cartItems;
-
-    @FindBy (xpath = "//div[contains(@class,'name')]")
-    private WebElement accountIcon;
-
-    public Header (WebDriver driver) {
+    public Header(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
-    public SchedulePage goToSchedulePage () {
+    public SchedulePage goToSchedulePage() {
         scheduleButton.click();
+        LOGGER.info("Clicked on scheduleButton.");
         return new SchedulePage(driver);
     }
 
-    public MoviesPage goToMoviesPage () {
+    public MoviesPage goToMoviesPage() {
         moviesButton.click();
+        LOGGER.info("Clicked on moviesButton.");
         return new MoviesPage(driver);
     }
 
-    public AccountPage goToAccountPage (){
-        accountIcon.click();
-        return new AccountPage(driver);
-    }
-
-    public AccountPage goToLogIn () {
+    public AccountPage goToLogIn() {
         logInButton.click();
+        LOGGER.info("Clicked on logInButton.");
         return new AccountPage(driver);
     }
 
-    public AccountPage logOut () {
+    public AccountPage logOut() {
         logOutButton.click();
+        LOGGER.info("Clicked on logOutButton.");
         return new AccountPage(driver);
     }
 
-    public List<String> getCitiesAndTheatersList () {
+    public List<String> getCitiesAndTheatersList() {
         List<String> citiesAndTheatersNames = new ArrayList<>();
-        for (WebElement city: cityList) {
+        for (WebElement city : cityList) {
             citiesAndTheatersNames.add(city.getText());
         }
         return citiesAndTheatersNames;
     }
 
-    public Header openCitiesList (){
+    public Header openCitiesList() {
         cityButton.click();
+        LOGGER.info("Clicked on cityButton.");
         return this;
     }
 }

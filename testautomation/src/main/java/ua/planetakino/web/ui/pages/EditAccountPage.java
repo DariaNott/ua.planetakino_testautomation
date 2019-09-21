@@ -27,23 +27,33 @@ public class EditAccountPage extends BasePage {
 
     public EditAccountPage changeName (String firstName, String lastName) {
         click(inputFirstName);
+        LOGGER.info("Clicked on inputFirstName.");
         inputFirstName.clear();
+        LOGGER.info("Field inputFirstName cleared.");
         inputFirstName.sendKeys(firstName);
+        LOGGER.info("New value entered into inputFirstName field.");
         click(inputLastName);
+        LOGGER.info("Clicked on inputFirstName.");
         inputLastName.clear();
+        LOGGER.info("Field inputLastName cleared.");
         inputLastName.sendKeys(lastName);
+        LOGGER.info("New value entered into inputLastName field.");
         return this;
     }
 
     public EditAccountPage changeSecretWord (String secretWord){
         click(inputSecretWord);
+        LOGGER.info("Clicked on inputSecretWord.");
         inputSecretWord.clear();
+        LOGGER.info("Field inputSecretWord cleared.");
         inputSecretWord.sendKeys(secretWord);
+        LOGGER.info("New value entered into inputSecretWord field.");
         return this;
     }
 
     public AccountPage confirmChanges () {
         click(saveChangesButton);
+        LOGGER.info("Clicked on saveChangesButton.");
         return new AccountPage(driver);
     }
 

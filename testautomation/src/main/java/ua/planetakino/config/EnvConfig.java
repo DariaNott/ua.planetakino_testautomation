@@ -6,23 +6,31 @@ import java.io.InputStream;
 import java.util.Properties;
 
 public class EnvConfig {
+
+    private static EnvConfig environment;
+
     private String webUrl;
     private int timeoutPageLoad;
     private int implicitlyWait;
-    String username;
-    String password;
+    private String username;
+    private String password;
 
-
-    public EnvConfig(String envName) {
-
+    private EnvConfig(String envName) {
         String path = System.getProperty("user.dir") + "/src/main/resources/config/"
                 + envName + ".properties";
         Properties properties = loadProperties(path);
-        webUrl = properties.getProperty(webUrl);
+        webUrl = properties.getProperty("webUrl");
         timeoutPageLoad = Integer.parseInt(properties.getProperty("timeout.PageLoad"));
         implicitlyWait = Integer.parseInt(properties.getProperty("timeout.implicitlyWait"));
-        username = properties.getProperty(username);
-        password = properties.getProperty(password);
+        username = properties.getProperty("username");
+        password = properties.getProperty("password");
+    }
+
+    public static EnvConfig getEnvironment() {
+        if (environment == null) {
+            environment = new EnvConfig(System.getProperty("environment", "prod"));
+        }
+        return environment;
     }
 
     private Properties loadProperties(String path) {
@@ -47,11 +55,11 @@ public class EnvConfig {
         return implicitlyWait;
     }
 
-    public String getUsername () {
+    public String getUsername() {
         return username;
     }
 
-    public String getPassword () {
+    public String getPassword() {
         return password;
     }
 }

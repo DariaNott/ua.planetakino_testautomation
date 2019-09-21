@@ -12,7 +12,7 @@ public class AccountTests extends TestBase {
     }
 
     @Test
-    public void chekLogOut () {
+    public void checkLogOut () {
         String status = mainPage.getHeader().goToLogIn().logIn().getHeader().logOut().getAuthorizationStatus();
         helper.verifyAnonymousUser(status);
     }

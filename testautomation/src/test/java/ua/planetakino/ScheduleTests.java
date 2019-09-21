@@ -76,7 +76,6 @@ public class ScheduleTests extends TestBase {
         helper.verifyTechnologyAnfFormatFilter(movieItems, "CINETECH+, 3D");
     }
 
-    //expected to fail as there are no movies in this category combination available now
     @Test
     public void checkFilter_IMAX_3D() {
         List<MovieItem> movieItems = mainPage.getHeader().goToSchedulePage().selectFilterTechnologyIMAX()

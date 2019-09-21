@@ -3,10 +3,8 @@ package ua.planetakino.helper;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 import org.joda.time.Interval;
-import ua.planetakino.config.EnvConfig;
 
 public class DateHelper {
-    private EnvConfig config;
 
     public boolean isThisDateWithinRange(DateTime dateToValidate, int dayRange) {
         DateTimeZone timeZone = DateTimeZone.forID("Europe/Kiev");
@@ -25,37 +23,14 @@ public class DateHelper {
         return interval.contains(dateToValidate);
     }
 
-
     public DateTime dateConverter(String date) {
         date = date.trim();
         int spaceIndex = date.indexOf(" ");
         int comaIndex = date.indexOf(",");
         String day = date.substring(0, spaceIndex);
         String month = date.substring(spaceIndex, comaIndex).trim();
-        DateTime convertedDate = new DateTime(2019, monthConverter(month), Integer.parseInt(day), 12, 0, 0, 0);
+        DateTime convertedDate = new DateTime(new DateTime().year().get(), monthConverter(month), Integer.parseInt(day), 12, 0, 0, 0);
         return convertedDate;
-    }
-
-    //TODO use or delete
-    private String weekDayConverter(String weekDay) {
-        switch (weekDay) {
-            case "Monday":
-                return "понеділок";
-            case "Tuesday":
-                return "вівторок";
-            case "Wednesday":
-                return "середа";
-            case "Thursday":
-                return "четвер";
-            case "Friday":
-                return "п'ятниця";
-            case "Saturday":
-                return "субота";
-            case "Sunday":
-                return "неділя";
-            default:
-                return weekDay;
-        }
     }
 
     private int monthConverter(String month) {

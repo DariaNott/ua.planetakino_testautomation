@@ -2,6 +2,7 @@ package ua.planetakino.web.ui.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+import ua.planetakino.config.EnvConfig;
 
 public class MainPage extends BasePage {
 
@@ -12,7 +13,7 @@ public class MainPage extends BasePage {
 
     //for a demo
     public MainPage openWebsite() {
-        driver.get("https://planetakino.ua/");
+        driver.get(EnvConfig.getEnvironment().getWebUrl());
         return this;
     }
 

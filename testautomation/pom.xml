@@ -12,10 +12,10 @@
         <java.version>1.8</java.version>
         <testng.version>6.14.3</testng.version>
         <log4j.version>1.2.17</log4j.version>
-        <webdrivermanager.version>3.6.2</webdrivermanager.version>
+        <webdrivermanager.version>3.7.1</webdrivermanager.version>
         <selenium.version>3.141.0</selenium.version>
         <mavencompiler.version>3.7.0</mavencompiler.version>
-        <joda-time.version>2.10.3</joda-time.version>>
+        <joda-time.version>2.10.3</joda-time.version>
     </properties>
 
     <dependencies>
@@ -44,6 +44,12 @@
             <groupId>joda-time</groupId>
             <artifactId>joda-time</artifactId>
             <version>${joda-time.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>3.6.2</version>
+            <scope>compile</scope>
         </dependency>
 
     </dependencies>

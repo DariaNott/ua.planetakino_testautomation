@@ -1,16 +1,16 @@
 package ua.planetakino.web.ui.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
+import ua.planetakino.config.EnvConfig;
 
 public class AccountPage extends BasePage {
-
 
     @FindBy(xpath = "//label[contains(@for,'loginform-login')]")
     private WebElement getLoginField;
@@ -39,7 +39,6 @@ public class AccountPage extends BasePage {
     @FindBy(xpath = "//input[contains(@id,'submit-editting')]")
     private WebElement submittOldPass;
 
-    //TODO where should I put these?
     @FindBy(xpath = "//div[contains(@class,'authorised-user')]")
     private WebElement userIsAuthorised;
 
@@ -53,36 +52,57 @@ public class AccountPage extends BasePage {
 
     public EditAccountPage gotoEditAccountPage() {
         click(changeEmail);
-        //the site may ask
+        LOGGER.info("Clicked on changeEmail");
+        reenterPasswordIfRequired();
         return new EditAccountPage(driver);
     }
 
-    //FIXME config fails
     public AccountPage logIn() {
-        //  config = new EnvConfig(System.getProperty("env", "prod"));
         click(getLoginField);
-        //  loginField.sendKeys(config.getUsername());
-        loginField.sendKeys("robbinschantell@gmail.com");
+        LOGGER.info("Clicked on getLoginField");
+        EnvConfig config = EnvConfig.getEnvironment();
+        loginField.sendKeys(config.getUsername());
+        LOGGER.info("Username typed in loginField");
         click(getPasswordField);
-        //   passwordField.sendKeys(config.getPassword());
-        passwordField.sendKeys("J7yZAQFL3yeHX74v");
+        LOGGER.info("Clicked on getPasswordField");
+        passwordField.sendKeys(config.getPassword());
+        LOGGER.info("Username typed in passwordField");
         click(loginButton);
+        LOGGER.info("Clicked on loginButton");
         return this;
     }
 
     public String getAuthorizationStatus() {
         String status = null;
-        if (elementExists(userIsAuthorised)){
-        status = "authorised";
-        }  else if (elementExists(userIsAnonymous)){
+        if (elementExists(userIsAuthorised)) {
+            status = "authorised";
+        } else if (elementExists(userIsAnonymous)) {
             status = "anonymous";
         }
+        LOGGER.info("Receive authorization status.");
         return status;
     }
 
     private boolean elementExists(WebElement element) {
-        if (element == null) {
+        try{
+            return element.isDisplayed();
+        } catch (WebDriverException ex){
             return false;
-        } else return true;
+        }
+    }
+
+    private void reenterPasswordIfRequired() {
+        try {
+            if ((new WebDriverWait(driver, 5)).until(ExpectedConditions.visibilityOf(driver.
+                    findElement(By.xpath("//input[contains(@type,'password')]")))) != null) {
+                (new WebDriverWait(driver, 5)).until(ExpectedConditions.visibilityOf(driver.
+                        findElement(By.xpath("//input[contains(@type,'password')]"))))
+                        .sendKeys("J7yZAQFL3yeHX74v");
+                click(driver.findElement(By.xpath("//input[contains(@id,'submit-editting')]")));
+                LOGGER.info("Requested password entered.");
+            }
+        } catch (WebDriverException ex) {
+            LOGGER.info("Password wasn't requested.");
+        }
     }
 }

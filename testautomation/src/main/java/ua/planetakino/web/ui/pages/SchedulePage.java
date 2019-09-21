@@ -14,34 +14,34 @@ import java.util.List;
 
 public class SchedulePage extends BasePage {
 
-    @FindBy(xpath = "//mat-radio-button[contains(@id,'mat-radio-2')]")
+    @FindBy(id = "mat-radio-2")
     private WebElement filterPeriodToday;
 
-    @FindBy(xpath = "//mat-radio-button[contains(@id,'mat-radio-3')]")
+    @FindBy(id = "mat-radio-3")
     private WebElement filterPeriodTomorrow;
 
-    @FindBy(xpath = "//mat-radio-button[contains(@id,'mat-radio-4')]")
+    @FindBy(id = "mat-radio-4")
     private WebElement filterPeriodWeek;
 
-    @FindBy(xpath = "//mat-radio-button[contains(@id,'mat-radio-5')]")
+    @FindBy(id = "mat-radio-5")
     private WebElement filterPeriodMonth;
 
-    @FindBy(xpath = "//mat-checkbox[contains(@id,'mat-checkbox-1')]")
+    @FindBy(xpath = "//mat-checkbox//input[@value='4DX']")
     private WebElement filterTechnology4DX;
 
-    @FindBy(xpath = "//mat-checkbox[contains(@id,'mat-checkbox-2')]")
+    @FindBy(xpath = "//mat-checkbox//input[@value='Cinetech+']")
     private WebElement filterTechnologyCinetech;
 
-    @FindBy(xpath = "//mat-checkbox[contains(@id,'mat-checkbox-3')]")
+    @FindBy(xpath = "//mat-checkbox//input[@value='IMAX']")
     private WebElement filterTechnologyIMAX;
 
-    @FindBy(xpath = "//mat-checkbox[contains(@id,'mat-checkbox-4')]")
+    @FindBy(xpath = "//mat-checkbox//input[@value=\"RE'LUX\"]")
     private WebElement filterTechnologyReLUX;
 
-    @FindBy(xpath = "//mat-checkbox[contains(@id,'mat-checkbox-5')]")
+    @FindBy(xpath = "//mat-checkbox//input[@value='2D']")
     private WebElement filterFormat2D;
 
-    @FindBy(xpath = "//mat-checkbox[contains(@id,'mat-checkbox-6')]")
+    @FindBy(xpath = "//mat-checkbox//input[@value='3D']")
     private WebElement filterFormat3D;
 
     @FindBy(xpath = "//app-timetable-movie/div[contains(@class,'movie')]")
@@ -58,72 +58,111 @@ public class SchedulePage extends BasePage {
             String name = getNameForMovieElement(item);
             List<DateTime> dates = getDatesForMovieElement(item);
             List<String> technologiesAndFormats = getTechnologyAndFormatForMovieElement(item);
-            List<WebElement> availableMovieTime = getAvailableMovieTime(item);
-            MovieItem mItem = new MovieItem(name, dates, technologiesAndFormats, availableMovieTime);
+            MovieItem mItem = new MovieItem(name, dates, technologiesAndFormats);
             movieItems.add(mItem);
         }
         return movieItems;
     }
 
-    public OrderPage orderMovieTicket(int movieIndex, int movieTimeIndex) {
-        List<MovieItem> movieItems = getMovieItems();
-        MovieItem movieToGo = movieItems.get(movieIndex);
-        WebElement movieTime = movieToGo.getMovieTime().get(movieTimeIndex);
-        click(movieTime);
-        return new
-                OrderPage(driver);
+    public WebElement getMovieBlock(String movieName) {
+        for (WebElement item : movieItemBlocks) {
+            String name = getNameForMovieElement(item);
+           if (movieName.equals(name)) {
+               return item;
+           }
+        }
+        return null;
+    }
+
+    public OrderPage orderMovieTicket(String movieName, String movieTime) {
+        WebElement movieBlock = getMovieBlock(movieName);
+        WebElement movieTimeElement = getAvailableMovieTime(movieBlock, movieTime);
+        scrollInView(movieTimeElement);
+        LOGGER.info("Scrolled to  movieTimeElement.");
+        click(movieTimeElement);
+        LOGGER.info("Clicked on movieTimeElement.");
+        return new OrderPage(driver);
     }
 
     public SchedulePage selectFilterPeriodWeek() {
+        scrollInView(filterPeriodWeek);
+        LOGGER.info("Scrolled to filterPeriodWeek.");
         click(filterPeriodWeek);
+        LOGGER.info("Clicked on filterPeriodWeek.");
         return this;
     }
 
     public SchedulePage selectFilterPeriodToday() {
+        scrollInView(filterPeriodToday);
+        LOGGER.info("Scrolled to filterPeriodToday.");
         click(filterPeriodToday);
+        LOGGER.info("Clicked on filterPeriodToday.");
         return this;
     }
 
     public SchedulePage selectFilterPeriodTomorrow() {
+        scrollInView(filterPeriodTomorrow);
+        LOGGER.info("Scrolled to filterPeriodTomorrow.");
         click(filterPeriodTomorrow);
+        LOGGER.info("Clicked on filterPeriodTomorrow.");
         return this;
     }
 
     public SchedulePage selectFilterPeriodMonth() {
+        scrollInView(filterPeriodMonth);
+        LOGGER.info("Scrolled to filterPeriodMonth.");
         click(filterPeriodMonth);
+        LOGGER.info("Clicked on filterPeriodMonth.");
         return this;
     }
 
     public SchedulePage selectFilterTechnology4DX() {
+        scrollInView(filterTechnology4DX);
+        LOGGER.info("Scrolled to filterTechnology4DX.");
         click(filterTechnology4DX);
+        LOGGER.info("Clicked on filterTechnology4DX.");
         return this;
     }
 
     public SchedulePage selectFilterTechnologyCinetech() {
+        scrollInView(filterTechnologyCinetech);
+        LOGGER.info("Scrolled to filterTechnologyCinetech.");
         click(filterTechnologyCinetech);
+        LOGGER.info("Clicked on filterTechnologyCinetech.");
         return this;
     }
 
     public SchedulePage selectFilterTechnologyIMAX() {
+        scrollInView(filterTechnologyIMAX);
+        LOGGER.info("Scrolled to filterTechnologyIMAX.");
         click(filterTechnologyIMAX);
+        LOGGER.info("Clicked on filterTechnologyIMAX.");
         return this;
     }
 
     public SchedulePage selectFilterTechnologyReLUX() {
+        scrollInView(filterTechnologyReLUX);
+        LOGGER.info("Scrolled to filterTechnologyReLUX.");
         click(filterTechnologyReLUX);
+        LOGGER.info("Clicked on filterTechnologyReLUX.");
         return this;
     }
 
     public SchedulePage selectFilterFormat2D() {
+        scrollInView(filterFormat2D);
+        LOGGER.info("Scrolled to filterFormat2D.");
         click(filterFormat2D);
+        LOGGER.info("Clicked on filterFormat2D.");
         return this;
     }
 
     public SchedulePage selectFilterFormat3D() {
+        scrollPageToBottom();
+        LOGGER.info("Scrolled to bottom.");
         click(filterFormat3D);
+        LOGGER.info("Clicked on filterFormat3D.");
         return this;
     }
-
 
     private List<DateTime> getDatesForMovieElement(WebElement movieItemBlock) {
         DateHelper helper = new DateHelper();
@@ -154,15 +193,14 @@ public class SchedulePage extends BasePage {
         return technologiesAndFormats;
     }
 
-    private List<WebElement> getAvailableMovieTime(WebElement movieItemBlock) {
-        List<WebElement> movieTime = movieItemBlock.findElements(By.xpath(".//button[contains(@class,'chips')]"));
-        List<WebElement> availableMovieTime = new ArrayList<>();
-        for (WebElement time : movieTime) {
-            if (time.isEnabled()) {
-                availableMovieTime.add(time);
+    private WebElement getAvailableMovieTime(WebElement movieBlock, String time) {
+        List<WebElement> movieTimes = movieBlock.findElements(By.xpath(".//button[contains(@class,'chips')]"));
+        for (WebElement movieTime : movieTimes) {
+            if (movieTime.isEnabled() && time.equals(movieTime.getText())) {
+                return movieTime;
             }
         }
-        return availableMovieTime;
+        return null;
     }
 
 }

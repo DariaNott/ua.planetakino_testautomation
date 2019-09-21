@@ -12,9 +12,8 @@ public class MovieItem {
     private String name;
     private List<DateTime> dates;
     private List<String> technologyAndFormat;
-    private List<WebElement> movieTime;
 
-    public MovieItem (String name, List<DateTime> dates, List<String> technologyAndFormat, List<WebElement> availableMovieTime) {
+    public MovieItem (String name, List<DateTime> dates, List<String> technologyAndFormat) {
         this.name = name;
         if (dates == null){
             this.dates = new ArrayList<>();
@@ -26,11 +25,7 @@ public class MovieItem {
         } else {
             this.technologyAndFormat = technologyAndFormat;
         }
-        if (availableMovieTime == null){
-            this.movieTime = availableMovieTime;
-        }
     }
-
 
     public String getMovieName(){
         return name;
@@ -42,10 +37,6 @@ public class MovieItem {
 
     public List<String> getMovieTechnologyAndFormat () {
         return technologyAndFormat;
-    }
-
-    public  List<WebElement> getMovieTime(){
-        return movieTime;
     }
 
     @Override

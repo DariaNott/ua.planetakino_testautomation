@@ -1,17 +1,25 @@
 package ua.planetakino.helper;
 
+import org.apache.log4j.Logger;
 import org.joda.time.DateTime;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import ua.planetakino.entity.Account;
 import ua.planetakino.entity.MovieItem;
+import ua.planetakino.web.ui.pages.BasePage;
+import ua.planetakino.web.ui.pages.MoviesPage;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 
 public class VerifyHelper {
 
+    protected static final Logger LOGGER = Logger.getLogger(BasePage.class);
+
     public void verifyDateRange(List<MovieItem> movieItems, int dateRange) {
+        LOGGER.info("Checking range for date filters.");
         List<MovieItem> failedDatesInMovieItems = new ArrayList<>();
         for (MovieItem item : movieItems) {
             List<DateTime> datesList = item.getMovieDates();
@@ -29,6 +37,7 @@ public class VerifyHelper {
     }
 
     public void verifyTechnologyAnfFormatFilter(List<MovieItem> movieItems, String filtersNames) {
+        LOGGER.info("Checking technology and format filters.");
         List<MovieItem> failedFilters = new ArrayList<>();
         for (MovieItem item : movieItems) {
             List<String> techAndFormatList = item.getMovieTechnologyAndFormat();
@@ -45,16 +54,19 @@ public class VerifyHelper {
     }
 
     public void verifyProfileChangesInName(Account account, String firstName, String lastName) {
+        LOGGER.info("Checking changes in first and last names.");
         Assert.assertEquals(account.getFirstName(), firstName);
         Assert.assertEquals(account.getLastName(), lastName);
     }
 
-    public void verifyProfileChangesInSecretWord (Account account, String secretWord){
+    public void verifyProfileChangesInSecretWord(Account account, String secretWord) {
+        LOGGER.info("Checking changes in secret word.");
         Assert.assertEquals(account.getSecretWord(), secretWord);
     }
 
-    public void verifyCityList (List<String> citiesAndTheaters) {
-        List <String> cities = new ArrayList<>();
+    public void verifyCityList(List<String> citiesAndTheaters) {
+        LOGGER.info("Checking list of cities and cinemas.");
+        List<String> cities = new ArrayList<>();
         cities.add("Київ (Blockbuster)");
         cities.add("Київ (River Mall)");
         cities.add("Одеса (Котовського)");
@@ -66,11 +78,31 @@ public class VerifyHelper {
         Assert.assertEquals(citiesAndTheaters, cities);
     }
 
-    public void verifyAuthorizedUser (String status) {
+    public void verifyAuthorizedUser(String status) {
+        LOGGER.info("Checking that user is authorized.");
         Assert.assertEquals(status, "authorised");
     }
 
-    public void verifyAnonymousUser (String status) {
-        Assert.assertEquals(status, "anonoymus");
+    public void verifyAnonymousUser(String status) {
+        LOGGER.info("Checking that user is anonymous.");
+        Assert.assertEquals(status, "anonymous");
+    }
+
+    public void verifyPaymentPage(String currentUrl) {
+        LOGGER.info("Checking Payment Page URL.");
+        Assert.assertEquals(currentUrl, "https://pay.planetakino.ua/checkout");
+    }
+
+    public void verifyWebsiteIsOpenInNewTab(BasePage page, String expectedTitle) {
+        LOGGER.info("Checking that website with '" + expectedTitle + "' title is opened in new tab.");
+        Set<String> tabs = page.getWebDriver().getWindowHandles();
+        for (String i : tabs) {
+            WebDriver newDriver = page.getWebDriver().switchTo().window(i);
+            String title = newDriver.getTitle();
+            if (title.equals(expectedTitle)) {
+                return;
+            }
+        }
+        Assert.fail("No tabs with '" + expectedTitle + "' title found.");
     }
 }
