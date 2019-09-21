@@ -5,3 +5,4 @@ out
 target
 allure-results
 .allure
+*.log

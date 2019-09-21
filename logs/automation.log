@@ -1,0 +1,10 @@
+2019-09-21 22:33:22 INFO  TestBase:33 - Opened page with url https://planetakino.ua/
+2019-09-21 22:33:28 INFO  BasePage:59 - Clicked on logInButton.
+2019-09-21 22:33:30 INFO  BasePage:64 - Clicked on getLoginField
+2019-09-21 22:33:31 INFO  BasePage:67 - Username typed in loginField
+2019-09-21 22:33:31 INFO  BasePage:69 - Clicked on getPasswordField
+2019-09-21 22:33:31 INFO  BasePage:71 - Username typed in passwordField
+2019-09-21 22:33:32 INFO  BasePage:73 - Clicked on loginButton
+2019-09-21 22:33:36 INFO  BasePage:84 - Receive authorization status.
+2019-09-21 22:33:36 INFO  BasePage:88 - Checking that user is authorized.
+2019-09-21 22:33:37 INFO  TestBase:42 - Driver closed.
