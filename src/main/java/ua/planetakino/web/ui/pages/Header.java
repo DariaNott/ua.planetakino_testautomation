@@ -2,6 +2,7 @@ package ua.planetakino.web.ui.pages;
 
 import io.qameta.allure.Step;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -88,13 +89,14 @@ public class Header {
     }
 
     public WebElement waitClickability(WebElement element) {
-        new WebDriverWait(driver, 40).until(ExpectedConditions.elementToBeClickable(element));
+       // new WebDriverWait(driver, 40).until(ExpectedConditions.elementToBeClickable(element));
         return element;
     }
 
     public void click(WebElement element) {
-        Actions actions = new Actions(driver);
+        ((JavascriptExecutor)driver).executeScript("arguments[0].click();", element);
+      /*  Actions actions = new Actions(driver);
         waitClickability(element);
-        actions.moveToElement(element).click().build().perform();
+        actions.moveToElement(element).click().build().perform();*/
     }
 }
