@@ -16,7 +16,7 @@ public class MoviesPage extends BasePage {
     @FindBy(id = "ytplayer")
     private WebElement headTrailerPlayer;
 
-    @FindBy (xpath = "//a[contains(@class,'buy-online-banner_glasses')]")
+    @FindBy(xpath = "//a[contains(@class,'buy-online-banner_glasses')]")
     private WebElement aboutGlassesButton;
 
     public MoviesPage(WebDriver driver) {
@@ -32,7 +32,7 @@ public class MoviesPage extends BasePage {
     }
 
     @Step("Clicking on 'Our 3D Glasses' button")
-    public MoviesPage openAboutGlassInfo () {
+    public MoviesPage openAboutGlassInfo() {
         click(aboutGlassesButton);
         LOGGER.info("Clicked on aboutGlassesButton.");
         return this;

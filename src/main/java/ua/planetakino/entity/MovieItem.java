@@ -13,29 +13,29 @@ public class MovieItem {
     private List<DateTime> dates;
     private List<String> technologyAndFormat;
 
-    public MovieItem (String name, List<DateTime> dates, List<String> technologyAndFormat) {
+    public MovieItem(String name, List<DateTime> dates, List<String> technologyAndFormat) {
         this.name = name;
-        if (dates == null){
+        if (dates == null) {
             this.dates = new ArrayList<>();
         } else {
             this.dates = dates;
         }
-        if (technologyAndFormat == null){
+        if (technologyAndFormat == null) {
             this.technologyAndFormat = new ArrayList<>();
         } else {
             this.technologyAndFormat = technologyAndFormat;
         }
     }
 
-    public String getMovieName(){
+    public String getMovieName() {
         return name;
     }
 
-    public List<DateTime> getMovieDates (){
+    public List<DateTime> getMovieDates() {
         return dates;
     }
 
-    public List<String> getMovieTechnologyAndFormat () {
+    public List<String> getMovieTechnologyAndFormat() {
         return technologyAndFormat;
     }
 

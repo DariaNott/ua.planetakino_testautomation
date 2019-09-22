@@ -68,9 +68,9 @@ public class SchedulePage extends BasePage {
     public WebElement getMovieBlock(String movieName) {
         for (WebElement item : movieItemBlocks) {
             String name = getNameForMovieElement(item);
-           if (movieName.equals(name)) {
-               return item;
-           }
+            if (movieName.equals(name)) {
+                return item;
+            }
         }
         return null;
     }
@@ -85,6 +85,7 @@ public class SchedulePage extends BasePage {
         LOGGER.info("Clicked on movieTimeElement.");
         return new OrderPage(driver);
     }
+
     @Step("Clicking on 'Week' radio button.")
     public SchedulePage selectFilterPeriodWeek() {
         scrollInView(filterPeriodWeek);

@@ -1,4 +1,5 @@
 package ua.planetakino.web.ui.drivers;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 import org.openqa.selenium.WebDriver;
@@ -6,7 +7,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class WebDriverFactory {
 
-    private WebDriverFactory () {}
+    private WebDriverFactory() {
+    }
 
     public static WebDriver getDriver(String webDriverName) {
         switch (webDriverName) {

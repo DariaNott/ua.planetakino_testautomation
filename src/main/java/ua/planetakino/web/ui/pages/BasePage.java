@@ -23,7 +23,7 @@ public abstract class BasePage {
         return new Header(driver);
     }
 
-    public WebDriver getWebDriver () {
+    public WebDriver getWebDriver() {
         return driver;
     }
 

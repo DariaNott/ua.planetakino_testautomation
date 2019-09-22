@@ -12,22 +12,22 @@ public class EditAccountPage extends BasePage {
     @FindBy(xpath = "//input[contains(@id,'profilechangeform-firstname')]")
     private WebElement inputFirstName;
 
-    @FindBy (xpath = "//input[contains(@id,'profilechangeform-lastname')]")
+    @FindBy(xpath = "//input[contains(@id,'profilechangeform-lastname')]")
     private WebElement inputLastName;
 
-    @FindBy (xpath = "//input[contains(@name,'ProfileChangeForm[secretWord]')]")
+    @FindBy(xpath = "//input[contains(@name,'ProfileChangeForm[secretWord]')]")
     private WebElement inputSecretWord;
 
-    @FindBy (xpath = "//input[contains(@class,'btn-input-block btn-input-block-form')]")
+    @FindBy(xpath = "//input[contains(@class,'btn-input-block btn-input-block-form')]")
     private WebElement saveChangesButton;
 
-    public EditAccountPage (WebDriver driver) {
+    public EditAccountPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }
 
     @Step("Changing the full name of the user.")
-    public EditAccountPage changeName (String firstName, String lastName) {
+    public EditAccountPage changeName(String firstName, String lastName) {
         click(inputFirstName);
         LOGGER.info("Clicked on inputFirstName.");
         inputFirstName.clear();
@@ -44,7 +44,7 @@ public class EditAccountPage extends BasePage {
     }
 
     @Step("Changing secret word")
-    public EditAccountPage changeSecretWord (String secretWord){
+    public EditAccountPage changeSecretWord(String secretWord) {
         click(inputSecretWord);
         LOGGER.info("Clicked on inputSecretWord.");
         inputSecretWord.clear();
@@ -55,13 +55,13 @@ public class EditAccountPage extends BasePage {
     }
 
     @Step("Confirming changes by clicking on button 'Save'")
-    public AccountPage confirmChanges () {
+    public AccountPage confirmChanges() {
         click(saveChangesButton);
         LOGGER.info("Clicked on saveChangesButton.");
         return new AccountPage(driver);
     }
 
-    public Account getAccountInfo () {
+    public Account getAccountInfo() {
         String firstName = inputFirstName.getAttribute("value");
         String lastName = inputLastName.getAttribute("value");
         String secretWord = inputSecretWord.getAttribute("value");

@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +15,7 @@ import java.util.List;
 public class Header {
 
     private WebDriver driver;
+
     protected static final Logger LOGGER = Logger.getLogger(BasePage.class);
 
     @FindBy(xpath = "//li/a[contains(@href,'showtimes')]")
@@ -41,6 +44,7 @@ public class Header {
 
     @Step("Clicking on 'Schedule' button in header")
     public SchedulePage goToSchedulePage() {
+        waitClickability(scheduleButton);
         scheduleButton.click();
         LOGGER.info("Clicked on scheduleButton.");
         return new SchedulePage(driver);
@@ -48,6 +52,7 @@ public class Header {
 
     @Step("Clicking on 'Movies' button in header")
     public MoviesPage goToMoviesPage() {
+        waitClickability(moviesButton);
         moviesButton.click();
         LOGGER.info("Clicked on moviesButton.");
         return new MoviesPage(driver);
@@ -55,6 +60,7 @@ public class Header {
 
     @Step("Clicking on 'Log in' button in header")
     public AccountPage goToLogIn() {
+        waitClickability(logInButton);
         logInButton.click();
         LOGGER.info("Clicked on logInButton.");
         return new AccountPage(driver);
@@ -62,6 +68,7 @@ public class Header {
 
     @Step("Clicking on 'Log out' icon in header")
     public AccountPage logOut() {
+        waitClickability(logOutButton);
         logOutButton.click();
         LOGGER.info("Clicked on logOutButton.");
         return new AccountPage(driver);
@@ -77,8 +84,14 @@ public class Header {
 
     @Step("Clicking on cities button in header")
     public Header openCitiesList() {
+        waitClickability(cityButton);
         cityButton.click();
         LOGGER.info("Clicked on cityButton.");
         return this;
+    }
+
+    private WebElement waitClickability(WebElement element) {
+        new WebDriverWait(driver, 40).until(ExpectedConditions.elementToBeClickable(element));
+        return element;
     }
 }

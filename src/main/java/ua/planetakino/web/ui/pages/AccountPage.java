@@ -53,11 +53,13 @@ public class AccountPage extends BasePage {
 
     @Step("Clicking on 'Change email' button")
     public EditAccountPage gotoEditAccountPage() {
+        waitClickability(changeEmail);
         click(changeEmail);
         LOGGER.info("Clicked on changeEmail");
         reenterPasswordIfRequired();
         return new EditAccountPage(driver);
     }
+
     @Step("Logging in")
     public AccountPage logIn() {
         click(getLoginField);
@@ -86,20 +88,20 @@ public class AccountPage extends BasePage {
     }
 
     private boolean elementExists(WebElement element) {
-        try{
+        try {
             return element.isDisplayed();
-        } catch (WebDriverException ex){
+        } catch (WebDriverException ex) {
             return false;
         }
     }
 
     private void reenterPasswordIfRequired() {
         try {
-            if ((new WebDriverWait(driver, 5)).until(ExpectedConditions.visibilityOf(driver.
+            if ((new WebDriverWait(driver, 10)).until(ExpectedConditions.visibilityOf(driver.
                     findElement(By.xpath("//input[contains(@type,'password')]")))) != null) {
-                (new WebDriverWait(driver, 5)).until(ExpectedConditions.visibilityOf(driver.
+                (new WebDriverWait(driver, 10)).until(ExpectedConditions.visibilityOf(driver.
                         findElement(By.xpath("//input[contains(@type,'password')]"))))
-                        .sendKeys("J7yZAQFL3yeHX74v");
+                        .sendKeys(EnvConfig.getEnvironment().getPassword());
                 click(driver.findElement(By.xpath("//input[contains(@id,'submit-editting')]")));
                 LOGGER.info("Requested password entered.");
             }
