@@ -28,7 +28,7 @@ public abstract class TestBase {
         driver = WebDriverFactory.getDriver(System.getProperty("browser", "chrome"));
         driver.manage().timeouts().pageLoadTimeout(EnvConfig.getEnvironment().getTimeoutPageLoad(), TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(EnvConfig.getEnvironment().getImplicitlyWait(), TimeUnit.SECONDS);
-       // driver.manage().window().maximize();
+        driver.manage().window().maximize();
         mainPage = new MainPage(driver);
         mainPage = mainPage.openWebsite();
         LOGGER.info("Opened page with url " + EnvConfig.getEnvironment().getWebUrl());
