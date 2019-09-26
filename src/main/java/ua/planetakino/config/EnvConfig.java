@@ -5,6 +5,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+/**
+ * The class {@code EnvConfig} is a singleton. It takes *.properties file
+ * and provides environment values for the project;
+ * @author Daria Ivanova
+ */
 public class EnvConfig {
 
     private static EnvConfig environment;
@@ -33,6 +38,7 @@ public class EnvConfig {
         return environment;
     }
 
+    /** Reads and loads .properties doc by the path */
     private Properties loadProperties(String path) {
         try (InputStream input = new FileInputStream(path)) {
             Properties prop = new Properties();

@@ -4,8 +4,15 @@ import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 import org.joda.time.Interval;
 
+/**
+ * The class {@code DateHelper} converts String to a DataTime object and asserts that
+ * the date is within the specific range
+ * @author Daria Ivanova
+ */
 public class DateHelper {
 
+    /** The method counts the range from the current date
+     * and checks whether the given date is in the range*/
     public boolean isThisDateWithinRange(DateTime dateToValidate, int dayRange) {
         DateTimeZone timeZone = DateTimeZone.forID("Europe/Kiev");
         DateTime now = DateTime.now(timeZone);
@@ -23,6 +30,7 @@ public class DateHelper {
         return interval.contains(dateToValidate);
     }
 
+    /** Date in String format is being converted to a DateTime object */
     public DateTime dateConverter(String date) {
         date = date.trim();
         int spaceIndex = date.indexOf(" ");

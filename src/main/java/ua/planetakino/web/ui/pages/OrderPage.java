@@ -29,15 +29,15 @@ public class OrderPage extends BasePage {
     @Step("Clicking on a seat icon to add it to the cart.")
     public OrderPage addSeat() {
         List<WebElement> availableSeats = getSeatsList();
-        click(availableSeats.get(3));
         LOGGER.info("Clicked on an available seat.");
+        click(availableSeats.get(3));
         return this;
     }
 
     @Step("Clicking on 'Add to cart' button.")
     public OrderPage submitOrder() {
-        click(addToCartButton);
         LOGGER.info("Clicked on addToCartButton.");
+        click(addToCartButton);
         return this;
     }
 

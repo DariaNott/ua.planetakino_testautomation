@@ -53,37 +53,37 @@ public class AccountPage extends BasePage {
 
     @Step("Clicking on 'Change email' button")
     public EditAccountPage gotoEditAccountPage() {
+        LOGGER.info("Clicked on changeEmail");
         waitClickability(changeEmail);
         click(changeEmail);
-        LOGGER.info("Clicked on changeEmail");
         reenterPasswordIfRequired();
         return new EditAccountPage(driver);
     }
 
     @Step("Logging in")
     public AccountPage logIn() {
-        click(getLoginField);
         LOGGER.info("Clicked on getLoginField");
+        click(getLoginField);
         EnvConfig config = EnvConfig.getEnvironment();
-        loginField.sendKeys(config.getUsername());
         LOGGER.info("Username typed in loginField");
-        click(getPasswordField);
+        loginField.sendKeys(config.getUsername());
         LOGGER.info("Clicked on getPasswordField");
-        passwordField.sendKeys(config.getPassword());
+        click(getPasswordField);
         LOGGER.info("Username typed in passwordField");
-        click(loginButton);
+        passwordField.sendKeys(config.getPassword());
         LOGGER.info("Clicked on loginButton");
+        click(loginButton);
         return this;
     }
 
     public String getAuthorizationStatus() {
         String status = null;
+        LOGGER.info("Receive authorization status.");
         if (elementExists(userIsAuthorised)) {
             status = "authorised";
         } else if (elementExists(userIsAnonymous)) {
             status = "anonymous";
         }
-        LOGGER.info("Receive authorization status.");
         return status;
     }
 
@@ -97,13 +97,13 @@ public class AccountPage extends BasePage {
 
     private void reenterPasswordIfRequired() {
         try {
+            LOGGER.info("Requested password entered.");
             if ((new WebDriverWait(driver, 10)).until(ExpectedConditions.visibilityOf(driver.
                     findElement(By.xpath("//input[contains(@type,'password')]")))) != null) {
                 (new WebDriverWait(driver, 10)).until(ExpectedConditions.visibilityOf(driver.
                         findElement(By.xpath("//input[contains(@type,'password')]"))))
                         .sendKeys(EnvConfig.getEnvironment().getPassword());
                 click(driver.findElement(By.xpath("//input[contains(@id,'submit-editting')]")));
-                LOGGER.info("Requested password entered.");
             }
         } catch (WebDriverException ex) {
             LOGGER.info("Password wasn't requested.");

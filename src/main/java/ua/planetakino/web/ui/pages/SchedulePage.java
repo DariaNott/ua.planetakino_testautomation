@@ -79,100 +79,100 @@ public class SchedulePage extends BasePage {
     public OrderPage orderMovieTicket(String movieName, String movieTime) {
         WebElement movieBlock = getMovieBlock(movieName);
         WebElement movieTimeElement = getAvailableMovieTime(movieBlock, movieTime);
-        scrollInView(movieTimeElement);
         LOGGER.info("Scrolled to  movieTimeElement.");
-        click(movieTimeElement);
+        scrollInView(movieTimeElement);
         LOGGER.info("Clicked on movieTimeElement.");
+        click(movieTimeElement);
         return new OrderPage(driver);
     }
 
     @Step("Clicking on 'Week' radio button.")
     public SchedulePage selectFilterPeriodWeek() {
-        scrollInView(filterPeriodWeek);
         LOGGER.info("Scrolled to filterPeriodWeek.");
-        click(filterPeriodWeek);
+        scrollInView(filterPeriodWeek);
         LOGGER.info("Clicked on filterPeriodWeek.");
+        click(filterPeriodWeek);
         return this;
     }
 
     @Step("Clicking on 'Today' radio button.")
     public SchedulePage selectFilterPeriodToday() {
-        scrollInView(filterPeriodToday);
         LOGGER.info("Scrolled to filterPeriodToday.");
-        click(filterPeriodToday);
+        scrollInView(filterPeriodToday);
         LOGGER.info("Clicked on filterPeriodToday.");
+        click(filterPeriodToday);
         return this;
     }
 
     @Step("Clicking on 'Tomorrow' radio button.")
     public SchedulePage selectFilterPeriodTomorrow() {
-        scrollInView(filterPeriodTomorrow);
         LOGGER.info("Scrolled to filterPeriodTomorrow.");
-        click(filterPeriodTomorrow);
+        scrollInView(filterPeriodTomorrow);
         LOGGER.info("Clicked on filterPeriodTomorrow.");
+        click(filterPeriodTomorrow);
         return this;
     }
 
     @Step("Clicking on 'Month' radio button.")
     public SchedulePage selectFilterPeriodMonth() {
-        scrollInView(filterPeriodMonth);
         LOGGER.info("Scrolled to filterPeriodMonth.");
-        click(filterPeriodMonth);
+        scrollInView(filterPeriodMonth);
         LOGGER.info("Clicked on filterPeriodMonth.");
+        click(filterPeriodMonth);
         return this;
     }
 
     @Step("Clicking on '4DX' checkbox.")
     public SchedulePage selectFilterTechnology4DX() {
-        scrollInView(filterTechnology4DX);
         LOGGER.info("Scrolled to filterTechnology4DX.");
-        click(filterTechnology4DX);
+        scrollInView(filterTechnology4DX);
         LOGGER.info("Clicked on filterTechnology4DX.");
+        click(filterTechnology4DX);
         return this;
     }
 
     @Step("Clicking on 'Cinetech+' checkbox.")
     public SchedulePage selectFilterTechnologyCinetech() {
-        scrollInView(filterTechnologyCinetech);
         LOGGER.info("Scrolled to filterTechnologyCinetech.");
-        click(filterTechnologyCinetech);
+        scrollInView(filterTechnologyCinetech);
         LOGGER.info("Clicked on filterTechnologyCinetech.");
+        click(filterTechnologyCinetech);
         return this;
     }
 
     @Step("Clicking on 'IMAX' checkbox.")
     public SchedulePage selectFilterTechnologyIMAX() {
-        scrollInView(filterTechnologyIMAX);
         LOGGER.info("Scrolled to filterTechnologyIMAX.");
-        click(filterTechnologyIMAX);
+        scrollInView(filterTechnologyIMAX);
         LOGGER.info("Clicked on filterTechnologyIMAX.");
+        click(filterTechnologyIMAX);
         return this;
     }
 
     @Step("Clicking on 'RE'LUX' checkbox.")
     public SchedulePage selectFilterTechnologyReLUX() {
-        scrollInView(filterTechnologyReLUX);
         LOGGER.info("Scrolled to filterTechnologyReLUX.");
-        click(filterTechnologyReLUX);
+        scrollInView(filterTechnologyReLUX);
         LOGGER.info("Clicked on filterTechnologyReLUX.");
+        click(filterTechnologyReLUX);
         return this;
     }
 
     @Step("Clicking on '2D' checkbox.")
     public SchedulePage selectFilterFormat2D() {
-        scrollInView(filterFormat2D);
         LOGGER.info("Scrolled to filterFormat2D.");
-        click(filterFormat2D);
+        scrollInView(filterFormat2D);
         LOGGER.info("Clicked on filterFormat2D.");
+        click(filterFormat2D);
         return this;
     }
 
     @Step("Clicking on '3D' checkbox.")
     public SchedulePage selectFilterFormat3D() {
-        scrollPageToBottom();
         LOGGER.info("Scrolled to bottom.");
-        click(filterFormat3D);
+        scrollPageToBottom();
         LOGGER.info("Clicked on filterFormat3D.");
+        click(filterFormat3D);
         return this;
     }
 

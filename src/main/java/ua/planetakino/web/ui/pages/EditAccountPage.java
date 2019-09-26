@@ -28,36 +28,36 @@ public class EditAccountPage extends BasePage {
 
     @Step("Changing the full name of the user.")
     public EditAccountPage changeName(String firstName, String lastName) {
+        LOGGER.info("Clicked on inputFirstName.");
         click(inputFirstName);
-        LOGGER.info("Clicked on inputFirstName.");
-        inputFirstName.clear();
         LOGGER.info("Field inputFirstName cleared.");
-        inputFirstName.sendKeys(firstName);
+        inputFirstName.clear();
         LOGGER.info("New value entered into inputFirstName field.");
-        click(inputLastName);
+        inputFirstName.sendKeys(firstName);
         LOGGER.info("Clicked on inputFirstName.");
-        inputLastName.clear();
+        click(inputLastName);
         LOGGER.info("Field inputLastName cleared.");
-        inputLastName.sendKeys(lastName);
+        inputLastName.clear();
         LOGGER.info("New value entered into inputLastName field.");
+        inputLastName.sendKeys(lastName);
         return this;
     }
 
     @Step("Changing secret word")
     public EditAccountPage changeSecretWord(String secretWord) {
-        click(inputSecretWord);
         LOGGER.info("Clicked on inputSecretWord.");
-        inputSecretWord.clear();
+        click(inputSecretWord);
         LOGGER.info("Field inputSecretWord cleared.");
-        inputSecretWord.sendKeys(secretWord);
+        inputSecretWord.clear();
         LOGGER.info("New value entered into inputSecretWord field.");
+        inputSecretWord.sendKeys(secretWord);
         return this;
     }
 
     @Step("Confirming changes by clicking on button 'Save'")
     public AccountPage confirmChanges() {
-        click(saveChangesButton);
         LOGGER.info("Clicked on saveChangesButton.");
+        click(saveChangesButton);
         return new AccountPage(driver);
     }
 

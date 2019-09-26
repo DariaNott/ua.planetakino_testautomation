@@ -44,33 +44,33 @@ public class Header {
 
     @Step("Clicking on 'Schedule' button in header")
     public SchedulePage goToSchedulePage() {
+        LOGGER.info("Clicked on scheduleButton.");
         waitClickability(scheduleButton);
         scheduleButton.click();
-        LOGGER.info("Clicked on scheduleButton.");
         return new SchedulePage(driver);
     }
 
     @Step("Clicking on 'Movies' button in header")
     public MoviesPage goToMoviesPage() {
+        LOGGER.info("Clicked on moviesButton.");
         waitClickability(moviesButton);
         moviesButton.click();
-        LOGGER.info("Clicked on moviesButton.");
         return new MoviesPage(driver);
     }
 
     @Step("Clicking on 'Log in' button in header")
     public AccountPage goToLogIn() {
+        LOGGER.info("Clicked on logInButton.");
         waitClickability(logInButton);
         logInButton.click();
-        LOGGER.info("Clicked on logInButton.");
         return new AccountPage(driver);
     }
 
     @Step("Clicking on 'Log out' icon in header")
     public AccountPage logOut() {
+        LOGGER.info("Clicked on logOutButton.");
         waitClickability(logOutButton);
         logOutButton.click();
-        LOGGER.info("Clicked on logOutButton.");
         return new AccountPage(driver);
     }
 
@@ -84,9 +84,9 @@ public class Header {
 
     @Step("Clicking on cities button in header")
     public Header openCitiesList() {
+        LOGGER.info("Clicked on cityButton.");
         waitClickability(cityButton);
         cityButton.click();
-        LOGGER.info("Clicked on cityButton.");
         return this;
     }
 

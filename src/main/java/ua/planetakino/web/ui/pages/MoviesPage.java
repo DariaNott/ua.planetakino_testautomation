@@ -26,15 +26,15 @@ public class MoviesPage extends BasePage {
 
     @Step("Clicking on the first movie in the window")
     public MoviesPage openFirstMovieDetails() {
-        click(moviePoster);
         LOGGER.info("Clicked on moviePoster.");
+        click(moviePoster);
         return this;
     }
 
     @Step("Clicking on 'Our 3D Glasses' button")
     public MoviesPage openAboutGlassInfo() {
-        click(aboutGlassesButton);
         LOGGER.info("Clicked on aboutGlassesButton.");
+        click(aboutGlassesButton);
         return this;
     }
 
