@@ -1,0 +1,22 @@
+ID: PKB001
+Summary: Movies’ dates in the schedule are out of the range of the period filter.
+
+Severity: Minor
+Priority: Low
+
+Build: https://planetakino.ua/
+Environment: Windows 7 Max, Google Chrome 77.0.3865.90
+Status: Open
+
+Description: When the user chooses ‘month’ period filter there are movies that take place later than a month from current date.
+Author:	Daria Ivanova
+
+Steps to Reproduce:
+1. Click on "Ðîçêëàä" button.
+2. Click on the month filter.
+3. Scroll the page.
+
+Actual result: The dates for two movies are shown later than a month from current date.
+Expected result: The dates for movies should be in a month range.
+
+Appendices: https://imgur.com/rWMzYQu
